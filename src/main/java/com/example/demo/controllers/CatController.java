@@ -1,8 +1,6 @@
 package com.example.demo.controllers;
 
-import com.example.demo.models.CatModel;
 import com.example.demo.services.CatFeatures;
-import com.example.demo.services.CatGetFacts;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,30 +22,31 @@ public class CatController
     @ResponseBody
     public String getSingleFact()
     {
-        CatGetFacts cgf = new CatGetFacts();
-        return cgf.singleCatFact();
+        CatFeatures features = new CatFeatures();
+        return features.singleCatFact();
     }
 
     @GetMapping("/getTen")
     @ResponseBody
     public String getTenFacts()
     {
-        CatGetFacts cgt = new CatGetFacts();
-
-        return cgt.tenCatFacts();
+        CatFeatures features = new CatFeatures();
+        return features.tenCatFacts();
     }
 
     @GetMapping("/getTenSortByDate")
     @ResponseBody
     public String getTenFactsSortByName()
     {
-        return "";
+        CatFeatures features = new CatFeatures();
+        return features.tenCatFactsSorted();
     }
 
     @GetMapping("/contains")
     @ResponseBody
     public String getDefinedFacts(@RequestParam char c, int amount)
     {
-        return "";
+        CatFeatures features = new CatFeatures();
+        return features.containsAndAmountCatFacts(c,amount);
     }
 }

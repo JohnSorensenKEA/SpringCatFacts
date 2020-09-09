@@ -12,7 +12,6 @@ public class CatModel
     {
         try
         {
-
             URL catURL = new URL("https://cat-fact.herokuapp.com/facts/random");
 
             BufferedReader inputFromCatURL = new BufferedReader(new InputStreamReader(catURL.openStream()));

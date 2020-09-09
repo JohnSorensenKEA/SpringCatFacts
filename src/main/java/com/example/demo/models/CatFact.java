@@ -3,7 +3,6 @@ package com.example.demo.models;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import com.example.demo.models.CatFact;
 
 public class CatFact implements Comparable<CatFact>
 {
@@ -43,8 +42,8 @@ public class CatFact implements Comparable<CatFact>
 
     @Override
     public String toString(){
-        return text;
-        //return text + " \n(Created: "+createdAt+", updated: "+updatedAt+")";
+        //return text;
+        return text + " \n(Created: "+createdAt+", updated: "+updatedAt+")";
     }
 
     @Override
@@ -54,11 +53,11 @@ public class CatFact implements Comparable<CatFact>
 
         if(Integer.parseInt(formatter.format(createdAt)) > Integer.parseInt(formatter.format(cf.getCreatedAt())))
         {
-            return -1;
+            return 1;
         }
         else if (Integer.parseInt(formatter.format(createdAt)) < Integer.parseInt(formatter.format(cf.getCreatedAt())))
         {
-            return 1;
+            return -1;
         }
         return 0;
     }
