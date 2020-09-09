@@ -1,7 +1,6 @@
 package com.example.demo.services;
 
 import com.example.demo.models.CatFact;
-
 import java.util.ArrayList;
 
 public class CatFeatures
