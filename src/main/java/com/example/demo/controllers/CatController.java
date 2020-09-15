@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class CatController
 {
+    // Rettet efter Rasmus' løsning
+    private CatFeatures features = new CatFeatures();
 
     @GetMapping("/")
     @ResponseBody
     public String frontPage()
     {
-        CatFeatures features = new CatFeatures();
         return features.catIntro();
     }
 
@@ -22,7 +23,6 @@ public class CatController
     @ResponseBody
     public String getSingleFact()
     {
-        CatFeatures features = new CatFeatures();
         return features.singleCatFact();
     }
 
@@ -30,7 +30,6 @@ public class CatController
     @ResponseBody
     public String getTenFacts()
     {
-        CatFeatures features = new CatFeatures();
         return features.tenCatFacts();
     }
 
@@ -38,7 +37,6 @@ public class CatController
     @ResponseBody
     public String getTenFactsSortByName()
     {
-        CatFeatures features = new CatFeatures();
         return features.tenCatFactsSorted();
     }
 
@@ -46,7 +44,6 @@ public class CatController
     @ResponseBody
     public String getDefinedFacts(@RequestParam char c, int amount)
     {
-        CatFeatures features = new CatFeatures();
         return features.containsAndAmountCatFacts(c,amount);
     }
 }

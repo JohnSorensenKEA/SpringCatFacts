@@ -3,6 +3,8 @@ package com.example.demo.services;
 import com.example.demo.models.CatFact;
 import java.util.ArrayList;
 
+// Ojbekter instantieres efter behov og "genbruges" ikke i de forskellige metoder
+// Forsøg på at splitte funktioner op i flere klasser
 public class CatFeatures
 {
     public String catIntro()
